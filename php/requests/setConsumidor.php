@@ -4,9 +4,9 @@ include '../includes/conexao.php';
 
 if (!empty($_POST['enviar_cadastro_consumidor'])) {
 	
-	$nome = $_POST['nome'];
-	$email = $_POST['email'];
-	$senha = $_POST['senha'];
+	$nome = addslashes($_POST['nome']);
+	$email = addslashes($_POST['email']);
+	$senha = addslashes(md5($_POST['senha']));
 
 	if (!empty($nome) && !empty($email) && !empty($senha)) {
 	
