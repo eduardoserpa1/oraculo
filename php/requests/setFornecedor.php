@@ -2,7 +2,7 @@
 
 include '../includes/conexao.php';
 
-if (!empty($_POST['enviar_cadastro_consumidor'])) {
+if (!empty($_POST['enviar_cadastro_fornecedor'])) {
 	
 	$nome = $_POST['nome'];
 	$email = $_POST['email'];
