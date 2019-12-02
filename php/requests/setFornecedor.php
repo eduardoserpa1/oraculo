@@ -13,7 +13,7 @@ if (!empty($_POST['enviar_cadastro_fornecedor'])) {
 
 
 
-	if (!empty($nome) && !empty($email) && !empty($senha)) {
+	if (!empty($nome) && !empty($email) && !empty($senha) && !empty($endereco) && !empty($telefone)) {
 	
 		$query = "INSERT INTO Consumidor(	nome_fornecedor,
 											email_fornecedor,
