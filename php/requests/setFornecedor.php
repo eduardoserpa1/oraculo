@@ -4,11 +4,11 @@ include '../includes/conexao.php';
 
 if (!empty($_POST['enviar_cadastro_fornecedor'])) {
 	
-	$nome = $_POST['nome'];
-	$email = $_POST['email'];
-	$senha = $_POST['senha'];
-	$endereco = $_POST['endereco'];
-	$telefone = $_POST['telefone'];
+	$nome = addslashes($_POST['nome']);
+	$email = addslashes($_POST['nome']);
+	$senha = addslashes(md5($_POST['nome']));
+	$endereco = addslashes($_POST['nome']);
+	$telefone = addslashes($_POST['nome']);
 
 
 
