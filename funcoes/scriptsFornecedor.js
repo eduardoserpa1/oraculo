@@ -7,7 +7,7 @@ $(function(){
 
 
         success: function(response) {
-            let tbodyEl = $('.divProdutos');
+            let tbodyEl = $(' ');
 
             tbodyEl.html('');
             

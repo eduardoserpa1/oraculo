@@ -29,7 +29,7 @@ if (!empty($_POST['enviar_cadastro_consumidor'])) {
 		}
 
 		
-
+		header("Location:../../main/home.html");
 	
 }
 ?>
