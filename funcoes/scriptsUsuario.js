@@ -36,7 +36,10 @@ function AbrirReceita(id){
             
             response.forEach(function(Receita) {
                 if(Receita.id_receita==id){
-                tbodyEl.append('<div style="text-align:center; width:100%; margin-top:20px;"class="w3-third w3-container"> <img src="../graph/image/'+Receita.imagem_receita+'" alt="Norway" style="width:50%;" class=""> <p>'+Receita.nome_receita+'</><div class="listaDeAtalhos w3-grey"><h3 class=" w3-dark-grey">Lista De Ingredientes</h3><div id="listaDeProdutos'+Receita.id_receita+'"></div></div>  <p>'+Receita.modoDePreparo_receita+'</> <button onclick="listaIngredientes('+Receita.id_receita+')">a</>'   );}});
+                tbodyEl.append('<div style="text-align:center; width:100%; margin-top:20px;"class="w3-third w3-container"> <img src="../graph/image/'+Receita.imagem_receita+'" alt="Norway" style="width:50%;" class=""> <p>'+Receita.nome_receita+'</><div class="listaDeAtalhos w3-grey"><h3 class=" w3-dark-grey">Lista De Ingredientes:</h3><div id="listaDeProdutos'+Receita.id_receita+'"></div></div><p>Modo de preparo:</></br><p>'+Receita.modoDePreparo_receita+'</>'   );
+                listaIngredientes(Receita.id_receita);
+            }});
+
         }
     
     });
@@ -46,7 +49,6 @@ function AbrirReceita(id){
 
 
 function listaIngredientes(id){
-    $('#central').empty();
    
     $.ajax({
         url: 'http://localhost/oraculo-1/php/requests/getIngredientes.php',
@@ -56,7 +58,7 @@ function listaIngredientes(id){
 
         success: function(response) {
             
-            let tbodyEl = $('#central');
+            let tbodyEl = $('#listaDeProdutos'+id);
             
             tbodyEl.html('');
             
