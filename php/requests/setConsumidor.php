@@ -8,15 +8,30 @@ if (!empty($_POST['enviar_cadastro_consumidor'])) {
 	$email = addslashes($_POST['email']);
 	$senha = addslashes(md5($_POST['senha']));
 
-	if (!empty($nome) && !empty($email) && !empty($senha)) {
 	
-		$query = "INSERT INTO Consumidor(nome_consumidor,email_consumidor,senha_consumidor)
-					VALUES('$nome','$email','$senha')	";
-		mysqli_query($link,$query);
 		
-	}
-}
+		$query = "SELECT * FROM Fornecedor WHERE email_fornecedor like '$email' ";
+		
+		$resultado = mysqli_query($link,$query);
 
+		$num_row = mysqli_affected_rows($link);
+
+
+		if ($num_row==0) {
+		
+			$query = "INSERT INTO Consumidor(nome_consumidor,
+											email_consumidor,
+											senha_consumidor)
+
+					VALUES('$nome','$email','$senha')	";
+			mysqli_query($link,$query);
+
+		}
+
+		
+
+	
+}
 ?>
 
 
