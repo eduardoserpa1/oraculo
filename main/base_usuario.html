@@ -37,7 +37,7 @@
       <!-- Profile -->
       <div class="w3-card w3-round divs_conteudo">
         <div class="w3-container">
-         <h4 class="w3-center nome">Nome</h4>
+         <h4 class="w3-center nome" id="nome"></h4>
          <p class="w3-center"><img src="../graph/image/avatar.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
         </div>
@@ -113,6 +113,23 @@ function openNav() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      
+
+      
+
+      document.getElementById('nome').innerHTML = this.responseText;
+     
+
+    }
+  };
+  xhttp.open("GET", "../php/requests/carrega_perfil_consumidor.php", true);
+  xhttp.send();
+
+
 </script>
  
 
