@@ -71,12 +71,58 @@ function listaIngredientes(id){
                 });
         }
     
-    });
-        
-       
-      
-      
+    });   
 }
+
+function pesquisaReceita(){
+    $('#central').empty();
+    texto = document.getElementById("pesquisa").value;
+    //alert(texto);
+
+    $.ajax({
+        url: 'http://localhost/oraculo-1/php/requests/getIngredientes.php',
+        contentType: 'application/json',
+        dataType:"json",
+
+
+        success: function(response) {
+            
+            response.forEach(function(Receita_Produto) {
+                
+                if(Receita_Produto.nome_produto==texto){
+                   //alert(Receita_Produto.id_receita);
+                   listarReceitasSelecionada(Receita_Produto.id_receita);
+                }
+                });
+        }
+    
+    });   
+}
+
+function listarReceitasSelecionada(id){
+
+    $.ajax({
+        url: 'http://localhost/oraculo-1/php/requests/getReceitas.php',
+        contentType: 'application/json',
+        dataType:"json",
+
+
+        success: function(response) {
+            let tbodyEl = $('#central');
+
+            
+            response.forEach(function(Receita) {
+                if(Receita.id_receita==id){
+                    tbodyEl.append('<div style="heigth:300px; width:300px; margin-top:20px;"class="w3-third w3-container"> <img src="../graph/image/'+Receita.imagem_receita+'" alt="Norway" style="width:100%; max-height: 200px;" class=""> <div class="w3-container w3-white"><button onclick="AbrirReceita('+Receita.id_receita+')">'+Receita.nome_receita+'</>');
+                }
+            
+            });
+        }
+    
+    });
+}
+
+
 
 /*<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
   <h3 class="w3-padding-64 w3-center"><b>RPG<br>PLAYER</b></h3>
