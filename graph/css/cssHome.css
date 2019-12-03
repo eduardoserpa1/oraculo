@@ -173,9 +173,20 @@ body {
   color: white;
 }
 #header3{
-  font-family: "Century Gothic";
+  font-family: "Roboto Thin";
+  font-size: 26px;
   letter-spacing: 2.5px;
 }
 #color_button{
     background-color: #527b80;
+}
+#contact{
+  width: 350px;
+  margin-bottom: -70px;
+}
+
+.w3-justify{
+  font-size: 16px;
+  line-height: 35px;
+  margin-top: 35px;
 }
