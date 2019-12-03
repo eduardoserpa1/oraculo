@@ -8,6 +8,7 @@ function criaListaProdutos(nome_produto,id_produto){
 
 //lista a lista de produtos
 function listaListaProdutos(){
+  receitaProduto();
   $(function(){
     $('#listaDeProdutos').empty();
     for(i=0;i<listaProdutos.length;i+=2){
@@ -44,15 +45,11 @@ function receitaProduto(){
       valores+=','+aux;
     }
   }
-  $.ajax({
-    url: 'http://localhost/oraculo-1/php/requests/setReceita&Produtos.php?valores=' + valores,
-    method: 'POST',
-    contentType: 'application/json',
-    success: function(response) {
-      console.log(response);
-      $('#get-button').click();
-      }
-  });
+  //alert(valores);
+  $('#valores').empty();
+  $('#valores').attr("placeholder", valores);
+  $('#valores').attr("value", valores);
+  $('#valores').append(valores);
 }
 
 
