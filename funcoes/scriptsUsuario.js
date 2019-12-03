@@ -36,7 +36,7 @@ function AbrirReceita(id){
             
             response.forEach(function(Receita) {
                 if(Receita.id_receita==id){
-                tbodyEl.append('<div style="text-align:center; width:100%; margin-top:20px;"class="w3-third w3-container"> <img src="../graph/image/'+Receita.imagem_receita+'" alt="Norway" style="width:50%;" class=""> <p>'+Receita.nome_receita+'</> <p>'+Receita.modoDePreparo_receita+'</> <button onclick="listaIngredientes('+Receita.id_receita+')">a</>'   );}});
+                tbodyEl.append('<div style="text-align:center; width:100%; margin-top:20px;"class="w3-third w3-container"> <img src="../graph/image/'+Receita.imagem_receita+'" alt="Norway" style="width:50%;" class=""> <p>'+Receita.nome_receita+'</><div class="listaDeAtalhos w3-grey"><h3 class=" w3-dark-grey">Lista De Ingredientes</h3><div id="listaDeProdutos'+Receita.id_receita+'"></div></div>  <p>'+Receita.modoDePreparo_receita+'</> <button onclick="listaIngredientes('+Receita.id_receita+')">a</>'   );}});
         }
     
     });
@@ -85,9 +85,19 @@ function listaIngredientes(id){
   <div class="listaDeAtalhos w3-grey">
       <h3 class=" w3-dark-grey">Lista De Atalhos</h3>
       <div></div>
-     
-      
   </div>  
+  <div class="w3-grey w3-container" style="border-radius: 5px;">
+
+            <div class="w3-col s8 w3-bar">
+              <h5 class="">Lista de Ingredientes:</h5>
+            </div>
+            <hr>
+            <div id="listaDeProdutos" class="w3-bar-block">
+            </div>
+            <input id="valores" class="w3-input w3-border" name="valores" type="text">  
+            <br>
+      
+    </div>
 
 
    '<div class="w3-third w3-container">
