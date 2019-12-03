@@ -47,7 +47,7 @@
       <!-- Accordion -->
       <div class="w3-card w3-round">
         <div class="">
-          <button id="Receitas" onclick="" class="w3-button w3-block w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right" style="color: white;"></i> Receitas</button>
+          <button id="Receitas" onclick="listarReceitas();" class="w3-button w3-block w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right" style="color: white;"></i> Receitas</button>
           
  
         </div>      
@@ -60,9 +60,8 @@
     
       
       
-      <div class="w3-container w3-card divs_apresentacao w3-round w3-margin"><br>
-        
-        
+      <div id="central" class="w3-container w3-card divs_apresentacao w3-round w3-margin"><br>
+
         <h4 class="chamadas">SOBRE NÓS</h4><br>
         <hr class="w3-clear">
         <p class="texto">Uma rotina agitada exige uma alimentação saudável. Infelizmente, esta não é a realidade da maior parte da população brasileira. Nem sempre temos os alimentos disponíveis em casa e o tempo é um dos maiores empecilhos na corrida em busca de melhores hábitos alimentares. Com a evidente exposição a agrotóxicos, nos vemos em uma difícil situação: com os preços cada vez mais absurdos de produtos orgânicos — muitas vezes vendidos nos mesmos mercados que aqueles que contém agrotóxicos — e as duplas ou triplas jornadas, o brasileiro se torna refém daquilo que a agroindústria produz. O Oráculo surge como uma alternativa aos grandes mercados, conectando pequenos agricultores àqueles que buscam para si uma vida mais saudável e, o melhor de tudo, dentro de suas economias.  </p>
@@ -131,6 +130,8 @@ var xhttp = new XMLHttpRequest();
 
 
 </script>
+<script src="../funcoes/jquery.js"></script>
+<script src="../funcoes/scriptsUsuario.js"></script>
  
 
 </body>

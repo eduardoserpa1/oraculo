@@ -1,7 +1,7 @@
 $(function(){
     //solicita e recebe os audios como json e os insere no html
     $.ajax({
-        url: 'http://localhost/oraculo-1/php/requests/getProdutos.php',
+        url: 'http://192.168.15.218/oraculo-1/php/requests/getProdutos.php',
         contentType: 'application/json',
         dataType:"json",
 
