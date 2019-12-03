@@ -12,6 +12,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 .chamadas{text-align: center; font-size: 25px;}
 .nome{color:#527b80; font-weight: bold;}
 .texto{text-align: justify; width: 85%; margin-left: 7.5%;}
+.sair{float: right; color:white;margin-right: 5%; text-decoration: none; margin-top: 1.5%; font-weight: bold;}
 
 @media (max-width: 600px) 
 {
