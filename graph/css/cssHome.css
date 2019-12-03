@@ -42,6 +42,16 @@ button:hover {
 .botao_login{
   background-color: #527b80;
 }
+input[type="submit"]{
+  width: 100%;
+  padding:10px;
+  color: white;
+  border: solid 0px black;
+}
+input[type="submit"]:hover{
+  background-color: #4b7175;
+  cursor: pointer;
+}
 .login_opaco{
   opacity: 0.5;
   background-color: black;
