@@ -51,6 +51,7 @@ input[type="submit"]{
 input[type="submit"]:hover{
   background-color: #4b7175;
   cursor: pointer;
+  color: #c9c9c9;
 }
 .login_opaco{
   opacity: 0.5;
