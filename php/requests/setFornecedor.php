@@ -2,18 +2,18 @@
 
 include '../includes/conexao.php';
 
-if (!empty($_POST['enviar_cadastro_consumidor'])) {
+if (!empty($_POST['enviar_cadastro_fornecedor'])) {
 	
-	$nome = $_POST['nome'];
-	$email = $_POST['email'];
-	$senha = $_POST['senha'];
-	$endereco = $_POST['endereco'];
-	$telefone = $_POST['telefone'];
+	$nome = addslashes($_POST['nome']);
+	$email = addslashes($_POST['nome']);
+	$senha = addslashes(md5($_POST['nome']));
+	$endereco = addslashes($_POST['nome']);
+	$telefone = addslashes($_POST['nome']);
 
 
 
 
-	if (!empty($nome) && !empty($email) && !empty($senha)) {
+	if (!empty($nome) && !empty($email) && !empty($senha) && !empty($endereco) && !empty($telefone)) {
 	
 		$query = "INSERT INTO Consumidor(	nome_fornecedor,
 											email_fornecedor,
