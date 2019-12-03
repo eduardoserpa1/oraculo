@@ -32,6 +32,8 @@ if (!empty($_POST['enviar_cadastro_fornecedor'])) {
 						VALUES('$nome','$email','$senha','$endereco','$telefone')";
 			mysqli_query($link,$query);
 		}
+
+		header("Location:../../main/home.html");
 	
 }
 ?>
