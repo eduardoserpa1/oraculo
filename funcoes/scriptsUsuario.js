@@ -13,15 +13,41 @@ function listarReceitas(){
             tbodyEl.html('');
             
             response.forEach(function(Receita) {
-                tbodyEl.append('<div class="w3-third w3-container"><img src="../graph/image/'+Receita.imagem_receita+'" alt="Norway" style="width:100%" class=""><div class="w3-container w3-white"><p><b>'+Receita.nome_receita+'</b></p><div " class="w3-col s8 w3-bar"><h5 class="">Lista de Ingredientes:</h5></div><hr><div id="listaDeIngredientes'+Receita.id_receita+'" class="w3-bar-block"></div></br></br></br><p>'+Receita.modoDePreparo_receita+'</p></div></div>');
+                tbodyEl.append('<div style="heigth:300px; width:300px; margin-top:20px;"class="w3-third w3-container"> <img src="../graph/image/'+Receita.imagem_receita+'" alt="Norway" style="width:100%; max-height: 200px;" class=""> <div class="w3-container w3-white"><button onclick="AbrirReceita('+Receita.id_receita+')">'+Receita.nome_receita+'</>');
             });
         }
     
     });
 }
 
-function listaIngredientes(id){
+function AbrirReceita(id){
+    $('#central').empty();
 
+    $.ajax({
+        url: 'http://localhost/oraculo-1/php/requests/getReceitas.php',
+        contentType: 'application/json',
+        dataType:"json",
+
+
+        success: function(response) {
+            let tbodyEl = $('#central');
+
+            tbodyEl.html('');
+            
+            response.forEach(function(Receita) {
+                if(Receita.id_receita==id){
+                tbodyEl.append('<div style="text-align:center; width:100%; margin-top:20px;"class="w3-third w3-container"> <img src="../graph/image/'+Receita.imagem_receita+'" alt="Norway" style="width:50%;" class=""> <p>'+Receita.nome_receita+'</> <p>'+Receita.modoDePreparo_receita+'</> <button onclick="listaIngredientes('+Receita.id_receita+')">a</>'   );}});
+        }
+    
+    });
+}
+
+
+
+
+function listaIngredientes(id){
+    $('#central').empty();
+   
     $.ajax({
         url: 'http://localhost/oraculo-1/php/requests/getIngredientes.php',
         contentType: 'application/json',
@@ -29,26 +55,23 @@ function listaIngredientes(id){
 
 
         success: function(response) {
-            let tbodyEl = $('#listaDeIngredientes'+id);
-
+            
+            let tbodyEl = $('#central');
+            
             tbodyEl.html('');
             
-            response.forEach(function(Receita) {
-                if(Receita.id_receita == id){
-                   // tbodyEl.append('<p href="#" class="w3-bar-item w3-button w3-padding" style="border-radius: 10px; background-color: rgb(173,172,172);"onclick="">'+li+'</p>'); 
+            response.forEach(function(Receita_Produto) {
+                
+                if(Receita_Produto.id_receita==id){
+                   
+                    tbodyEl.append('<p>'+Receita_Produto.nome_produto+'</p>'); 
                 }
                 });
         }
     
     });
         
-        $(function(){
-          $('#listaDeIngredientes').empty();
-          for(i=0;i<listaProdutos.length;i+=2){
-            //alert(listaProdutos[i]+listaProdutos[i+1]);
-            $('#listaDeProdutos').append('<p href="#" class="w3-bar-item w3-button w3-padding" style="border-radius: 10px; background-color: rgb(173,172,172);"onclick="">'+listaProdutos[i]+'<input class="w3-right" onclick="deletLinhaProduto('+i+')" type="button" value="Delete"></p>'); 
-          }
-        });
+       
       
       
 }
