@@ -13,7 +13,7 @@ $(function(){
             
             response.forEach(function(Produto) {
                 var nome = "'"+Produto.nome_produto+"'";
-                tbodyEl.append('<div class="blocos" name="'+Produto.id_produto+'" ><img src="../graph/image/'+Produto.imagem_produto+'" height="42" width="42"><button id="btAds" onclick="selctProduto('+Produto.id_produto+','+nome+')">Adicionar</button></div>');
+                tbodyEl.append('<div class="blocos" name="'+Produto.id_produto+'" ><img src="../graph/image/'+Produto.imagem_produto+'" height="42" width="42"><button id="btAds" onclick="selctProduto('+Produto.id_produto+','+nome+')">Adicionar<br>'+nome+'</button></div>');
             });
         }
     
