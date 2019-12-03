@@ -1,0 +1,21 @@
+body{
+	background-color: white;
+}
+i{
+  color: white;
+}
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+#nav{background-color: black; opacity: 0.7;}
+#Receitas{background-color: #527b80; color:white;}
+.divs_conteudo{background-color: black; opacity: 0.7; color:white; margin-top: 4.499999%;}
+.divs_apresentacao{background-color: black; opacity: 0.7; color:white;}
+.chamadas{text-align: center; font-size: 25px;}
+.nome{color:#527b80; font-weight: bold;}
+.texto{text-align: justify; width: 85%; margin-left: 7.5%;}
+
+@media (max-width: 600px) 
+{
+  .logo{
+    height: 30px;
+  }
+}
