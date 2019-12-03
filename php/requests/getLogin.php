@@ -1,7 +1,7 @@
 <?php
 
 include '../includes/conexao.php';
-
+session_start();
 if (!empty($_POST['enviar_login'])) {
 	
 
@@ -46,7 +46,9 @@ if (!empty($_POST['enviar_login'])) {
 
 			$_SESSION['id_sessao'] = $linha['id_fornecedor'];
 
-			echo "o usuario eh um fornecedor";
+
+
+			echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=../../main/base_fornecedor.html'>";
 		}
 
 		if ($identifica == "consumidor") {
@@ -58,7 +60,7 @@ if (!empty($_POST['enviar_login'])) {
 
 			$_SESSION['id_sessao'] = $linha['id_consumidor'];
 
-			echo "o usuario eh um consumidor";
+		echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=../../main/base_usuario.html'>";
 		}
 
 		if ($identifica == "null") {
