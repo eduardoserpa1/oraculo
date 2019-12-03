@@ -65,7 +65,6 @@ if (!empty($_POST['enviar_login'])) {
 			echo "usuario ou senha nao encontrados";
 		}
 
-
 	}
 }
 
