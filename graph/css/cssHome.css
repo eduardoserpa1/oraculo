@@ -133,7 +133,7 @@ span.psw {
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('../img/home.jpg');
+  background-image: url('../../graph/image/home.jpg');
 
   min-height: 100%;
   background-position: center;
